@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyszukiwarka Połączeń Autobusowych</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚌 Wyszukiwarka Połączeń</h1>
+            <p class="subtitle">Znajdź swój autobus szybko i wygodnie</p>
+        </header>
+
+        <div class="search-section">
+            <div class="input-group">
+                <label for="from">Skąd:</label>
+                <input type="text" id="from" placeholder="np. Ratoszyn" autocomplete="off">
+                <div id="from-suggestions" class="suggestions"></div>
+            </div>
+
+            <button class="swap-btn" id="swap" title="Zamień miejsca">⇄</button>
+
+            <div class="input-group">
+                <label for="to">
+                    Dokąd:
+                    <button class="quick-btn" id="set-dworzec" title="Ustaw Białobrzegi Dworzec">🚉 Dworzec</button>
+                </label>
+                <input type="text" id="to" placeholder="np. Białobrzegi" autocomplete="off">
+                <div id="to-suggestions" class="suggestions"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="date">Data:</label>
+                <input type="date" id="date">
+            </div>
+
+            <button class="search-btn" id="search">🔍 Szukaj połączeń</button>
+        </div>
+
+        <div class="filters">
+            <label><input type="checkbox" id="filter-direct"> Tylko bezpośrednie</label>
+            <label><input type="checkbox" id="filter-morning"> Rano (6:00-12:00)</label>
+            <label><input type="checkbox" id="filter-afternoon"> Popołudnie (12:00-18:00)</label>
+            <label><input type="checkbox" id="filter-evening"> Wieczór (18:00-22:00)</label>
+        </div>
+
+        <div id="results" class="results"></div>
+
+        <div class="favorites-section">
+            <h3>⭐ Ulubione trasy</h3>
+            <div id="favorites" class="favorites"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
